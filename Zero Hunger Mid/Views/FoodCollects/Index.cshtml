@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Zero_Hunger_Mid.Models.FoodCollect>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    <p> <h2>---- Zero Hunger - Food Collection Portal -----</h2> </p>
+
+    <p>
+        <b> @Html.ActionLink("Create New Food Collection Request", "Create")</b>
+    </p>
+</center>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rest.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpierdDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCollected)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rest.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpierdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCollected)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,48 @@
+﻿@model Zero_Hunger_Mid.Models.FoodCollect
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    <p> <h2>---- Zero Hunger - Food Collection Portal -----</h2> </p>
+
+    <p>
+        <b>---- Food Collection Details -----</b>
+    </p>
+
+    <div>
+       
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Rest.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Rest.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ExpierdDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ExpierdDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsCollected)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsCollected)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

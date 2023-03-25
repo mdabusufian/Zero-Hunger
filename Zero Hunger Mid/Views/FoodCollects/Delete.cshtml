@@ -1,0 +1,55 @@
+﻿@model Zero_Hunger_Mid.Models.FoodCollect
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    <p> <h2>---- Zero Hunger - Food Collection Portal -----</h2> </p>
+
+    <p>
+        <b>---- Completed Food Collection History Delete  -----</b>
+    </p>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Rest.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Rest.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ExpierdDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ExpierdDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsCollected)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsCollected)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
